@@ -1,0 +1,60 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:63342         0.0.0.0:*               LISTEN      13865/java      
+tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -               
+tcp        0      0 127.0.0.1:6942          0.0.0.0:*               LISTEN      13865/java      
+tcp6       0      0 :::22                   :::*                    LISTEN      -               
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -               
+udp        0      0 0.0.0.0:40135           0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           2216/chrome     
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -               
+udp        0      0 127.0.1.1:53            0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:631             0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:47975           0.0.0.0:*                           -               
+udp6       0      0 :::5353                 :::*                                2216/chrome     
+udp6       0      0 :::5353                 :::*                                -               
+udp6       0      0 :::52127                :::*                                -               
+raw6       0      0 :::58                   :::*                    7           -               
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path
+unix  2      [ ACC ]     STREAM     LISTENING     26164    1349/systemd        /run/user/1000/systemd/private
+unix  2      [ ACC ]     SEQPACKET  LISTENING     15447    -                   /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     25168    -                   /run/user/1000/keyring/control
+unix  2      [ ACC ]     STREAM     LISTENING     22178    -                   /tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     28405    2147/sogou-qimpanel /tmp/sogou-qimpanel-celleric
+unix  2      [ ACC ]     STREAM     LISTENING     29973    2147/sogou-qimpanel /tmp/sogou-qimpaneleric
+unix  2      [ ACC ]     STREAM     LISTENING     27487    1780/gnome-session- /tmp/.ICE-unix/1780
+unix  2      [ ACC ]     STREAM     LISTENING     26328    -                   /run/user/1000/keyring/pkcs11
+unix  2      [ ACC ]     STREAM     LISTENING     26444    -                   /run/user/1000/keyring/ssh
+unix  2      [ ACC ]     STREAM     LISTENING     30937    2216/chrome         /tmp/.com.google.Chrome.Bzrn33/SingletonSocket
+unix  2      [ ACC ]     STREAM     LISTENING     28802    1865/pulseaudio     /run/user/1000/pulse/native
+unix  2      [ ACC ]     STREAM     LISTENING     27486    1780/gnome-session- @/tmp/.ICE-unix/1780
+unix  2      [ ACC ]     STREAM     LISTENING     22177    -                   @/tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     15443    -                   /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     15453    -                   /run/systemd/fsck.progress
+unix  2      [ ACC ]     STREAM     LISTENING     6900503  -                   @/tmp/dbus-UDE6r8WKhf
+unix  2      [ ACC ]     STREAM     LISTENING     15458    -                   /run/systemd/journal/stdout
+unix  2      [ ACC ]     STREAM     LISTENING     25263    1511/dbus-daemon    @/tmp/dbus-WCgV53cYCc
+unix  2      [ ACC ]     STREAM     LISTENING     27800    1788/dbus-daemon    @/tmp/dbus-Gi8Kw7UHLU
+unix  2      [ ACC ]     STREAM     LISTENING     70360    3462/unity-scope-ho @eric-com.canonical.Unity.Master.Scope.files.T11715224589420
+unix  2      [ ACC ]     STREAM     LISTENING     549320   9693/gvfsd-network  @/dbus-vfs-daemon/socket-7yZU7b1Q
+unix  2      [ ACC ]     STREAM     LISTENING     70359    3462/unity-scope-ho @eric-com.canonical.Unity.Master.Scope.applications.T11714827704850
+unix  2      [ ACC ]     STREAM     LISTENING     68273    3475/unity-scope-lo @eric-com.canonical.Unity.Scope.scopes.T11722382736721
+unix  2      [ ACC ]     STREAM     LISTENING     25593    -                   /home/eric/.gnupg/S.gpg-agent
+unix  2      [ ACC ]     STREAM     LISTENING     19884    -                   /var/run/cups/cups.sock
+unix  2      [ ACC ]     STREAM     LISTENING     19887    -                   /var/run/avahi-daemon/socket
+unix  2      [ ACC ]     STREAM     LISTENING     19888    -                   /run/acpid.socket
+unix  2      [ ACC ]     STREAM     LISTENING     19889    -                   /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     19890    -                   /run/snapd.socket
+unix  2      [ ACC ]     STREAM     LISTENING     19891    -                   /run/snapd-snap.socket
+unix  2      [ ACC ]     STREAM     LISTENING     19892    -                   /run/uuidd/request
+unix  2      [ ACC ]     STREAM     LISTENING     25230    1360/upstart        @/com/ubuntu/upstart-session/1000/1360
+unix  2      [ ACC ]     STREAM     LISTENING     22890    -                   /run/php/php7.0-fpm.sock
+unix  2      [ ACC ]     STREAM     LISTENING     22293    -                   /var/run/mysqld/mysqld.sock
+unix  2      [ ACC ]     STREAM     LISTENING     68274    3475/unity-scope-lo @eric-com.canonical.Unity.Scope.applications.T11722389413882
+unix  2      [ ACC ]     STREAM     LISTENING     26256    -                   /var/run/NetworkManager/private-dhcp
+unix  2      [ ACC ]     STREAM     LISTENING     71855    3474/unity-files-da @eric-com.canonical.Unity.Scope.files.T11715724246287

@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c1b90df2-b1f2-402c-9ed2-19efd90d7da9" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="taskpool.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/master/taskpool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="32" lean-forward="true" selection-end-line="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="job.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/job.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ts.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/ts.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="machines_ip.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/machines_ip.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>MTUyMzY5ODY3OS45NCBkZXMgMg</find>
+      <find>master_ip_port</find>
+      <find>MTUyMzY5OTE4NS4wOSBkZXMgNQ</find>
+      <find>WorkerMessage</find>
+      <find>filetype</find>
+      <find>accessKey</find>
+      <find>srcClient</find>
+      <find>recover_this_round_task</find>
+      <find>src-remo</find>
+      <find>src-remove</find>
+      <find>removePre</find>
+      <find>sync-in</find>
+      <find>sync-</find>
+      <find>sync-incre</find>
+      <find>sync-enab</find>
+      <find>status</find>
+      <find>accesskey</find>
+      <find>139714204579584</find>
+      <find>update</find>
+      <find>blank.txt</find>
+      <find>max</find>
+      <find>e8646c75896f215c383b32b000fbd940</find>
+      <find>pause</find>
+      <find>delete</find>
+      <find>show_s</find>
+      <find>access</find>
+      <find>delete_tmpfiles_in_s3</find>
+      <find>ACCE</find>
+      <find>check</find>
+      <find>from_fi</find>
+    </findStrings>
+    <dirStrings>
+      <dir>/usr/local/lib/python2.7/dist-packages/botocore</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/master/mastermessage.py" />
+        <option value="$PROJECT_DIR$/src/master/utils/collectinfo.py" />
+        <option value="$PROJECT_DIR$/logs/log-masters/log-master-4246.txt" />
+        <option value="$PROJECT_DIR$/conf/ts.cfg" />
+        <option value="$PROJECT_DIR$/jobs/124/sync" />
+        <option value="$PROJECT_DIR$/src/master/mytest/boto3/bucketoperation.py" />
+        <option value="$PROJECT_DIR$/src/master/mytest/boto3/objectoperation.py" />
+        <option value="$PROJECT_DIR$/logs/log-masters/log-master-4244.txt" />
+        <option value="$PROJECT_DIR$/src/worker/workermessage.py" />
+        <option value="$PROJECT_DIR$/logs/log-masters/log-master-4245.txt" />
+        <option value="$PROJECT_DIR$/test/createdata/create_jd_data.py" />
+        <option value="$PROJECT_DIR$/src/master/utils/decodeID.py" />
+        <option value="$PROJECT_DIR$/src/manager/jobmanager.py" />
+        <option value="$PROJECT_DIR$/test/createdata/create_disk_data.py" />
+        <option value="$PROJECT_DIR$/src/master/mytest/boto3/s3-sdk-python-demo.py" />
+        <option value="$PROJECT_DIR$/test/createdata/data.txt" />
+        <option value="$PROJECT_DIR$/src/common/sdk/basesdk.py" />
+        <option value="$PROJECT_DIR$/test/unittest/test_s3client.py" />
+        <option value="$PROJECT_DIR$/src/common/utils/get_url_info.py" />
+        <option value="$PROJECT_DIR$/src/common/utils/url.py" />
+        <option value="$PROJECT_DIR$/src/common/const/type.py" />
+        <option value="$PROJECT_DIR$/src/master/master.py" />
+        <option value="$PROJECT_DIR$/jobs/124/job.cfg" />
+        <option value="$PROJECT_DIR$/jobs/127/job.cfg" />
+        <option value="$PROJECT_DIR$/jobs/126/job.cfg" />
+        <option value="$PROJECT_DIR$/src/master/workermanagerinfo.py" />
+        <option value="$PROJECT_DIR$/logs/log-workers/log-worker-5253.txt" />
+        <option value="$PROJECT_DIR$/ts.py" />
+        <option value="$PROJECT_DIR$/src/worker/worker.py" />
+        <option value="$PROJECT_DIR$/src/common/dataobject/assignment.py" />
+        <option value="$PROJECT_DIR$/src/manager/workermanager.py" />
+        <option value="$PROJECT_DIR$/jobs/test-qiniufile/job.cfg" />
+        <option value="$PROJECT_DIR$/jobs/test-diskfile/job.cfg" />
+        <option value="$PROJECT_DIR$/src/common/utils/urltools.py" />
+        <option value="$PROJECT_DIR$/src/worker/workeragent.py" />
+        <option value="$PROJECT_DIR$/jobs/test-tencent/job.cfg" />
+        <option value="$PROJECT_DIR$/jobs/test-urlfile/job.cfg" />
+        <option value="$PROJECT_DIR$/jobs/test-baidu/job.cfg" />
+        <option value="$PROJECT_DIR$/src/manager/mastermanager.py" />
+        <option value="$PROJECT_DIR$/src/common/sdk/aliyunclient.py" />
+        <option value="$PROJECT_DIR$/src/common/sdk/clientfactory.py" />
+        <option value="$PROJECT_DIR$/src/common/sdk/qiniuclient.py" />
+        <option value="$PROJECT_DIR$/src/common/sdk/s3client.py" />
+        <option value="$PROJECT_DIR$/src/common/sdk/tencentclient.py" />
+        <option value="$PROJECT_DIR$/src/manager/commands.py" />
+        <option value="$PROJECT_DIR$/src/common/utils/configoperations.py" />
+        <option value="$PROJECT_DIR$/readme" />
+        <option value="$PROJECT_DIR$/jobs/2018-04-20 13:38:24_9m83VWj2/job.cfg" />
+        <option value="$PROJECT_DIR$/machines_ip.cfg" />
+        <option value="$PROJECT_DIR$/src/master/taskpool.py" />
+        <option value="$PROJECT_DIR$/job.cfg" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="292" />
+    <option name="y" value="-4" />
+    <option name="width" value="1400" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="s3transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../s3transfer" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.workeragent">
+    <configuration name="qiniuclient" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="s3transfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/common/sdk" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/common/sdk/qiniuclient.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="url" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="s3transfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/common/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/common/utils/urltools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="worker" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="s3transfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/worker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/worker/worker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="workeragent" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="s3transfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/worker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/worker/workeragent.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="workermanager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="s3transfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/manager" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/manager/workermanager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.url" />
+      <item itemvalue="Python.qiniuclient" />
+      <item itemvalue="Python.workermanager" />
+      <item itemvalue="Python.worker" />
+      <item itemvalue="Python.workeragent" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.workeragent" />
+        <item itemvalue="Python.url" />
+        <item itemvalue="Python.worker" />
+        <item itemvalue="Python.workermanager" />
+        <item itemvalue="Python.qiniuclient" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1b90df2-b1f2-402c-9ed2-19efd90d7da9" name="Default" comment="" />
+      <created>1522477744248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522477744248</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20633188" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297414" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34590518" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32937366" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.37068966" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978448" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.3297414" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/common/utils/urltools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/jobmanager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="235" column="31" selection-start-line="235" selection-start-column="22" selection-end-line="235" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/utils/process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-mastermanager.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="196" column="88" selection-start-line="196" selection-start-column="84" selection-end-line="196" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/master/workermanagerinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/worker/workeragent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="314" column="93" selection-start-line="314" selection-start-column="93" selection-end-line="314" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-urlfile/test-urlfile-check-error-list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-tencent/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-urlfile/test-urlfile-transfer-error-list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="108" selection-start-line="1" selection-start-column="100" selection-end-line="1" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-baidu/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-diskfile/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="30" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-workers/log-worker-5255.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17272">
+          <caret line="1016" selection-start-line="1016" selection-end-line="1016" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/mastermanager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3876">
+          <caret line="228" column="19" selection-start-line="228" selection-start-column="19" selection-end-line="228" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-jobmanager.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29444">
+          <caret line="1732" column="70" selection-start-line="1732" selection-start-column="70" selection-end-line="1732" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-urlfile/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="85" column="19" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-urlfile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="76" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/aliyunclient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/basesdk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/clientfactory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/qiniuclient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="202" column="8" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/s3client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="387" column="8" selection-start-line="387" selection-start-column="8" selection-end-line="387" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/tencentclient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="173" column="8" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/commands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="531" column="19" selection-start-line="531" selection-start-column="19" selection-end-line="531" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/utils/configoperations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/2018-04-20 13:38:24_9m83VWj2/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/2018-04-20 13:42:03_ftLX2Knx/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/2018-04-20 13:42:03_ftLX2Knx/status">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/2018-04-20 13:42:03_ftLX2Knx/sync">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="38" column="90" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4256.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4255.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4254.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4253.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4252.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4251.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4250.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4249.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4248.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4247.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4245.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4244.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/machines_ip.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-workers/log-worker-5254.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-workers/log-worker-5253.txt">
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="413">
+          <caret line="8487" column="26" selection-start-line="8487" selection-start-column="26" selection-end-line="8487" selection-end-column="26" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-url/test-url-check-md5-list.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-url/test-url-check-error-list.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/master/taskpool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/ts.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/job.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="32" lean-forward="true" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

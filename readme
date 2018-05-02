@@ -1,0 +1,112 @@
+1. 简介
+迁移工具的目的是为了把数据简单、可靠、快速的迁移到京东云存储上，支持文件系统、url指定的资源、七牛云、百度云、阿里云、腾讯云以及遵守s3接口标准的数据的迁移。
+迁移工具是一个简单的分布式系统，采用python rpc实现，您可以将其运行在多台机器上，当然也可以在单机上运行。
+迁移工具支持冷数据迁移，也支持热数据迁移。
+使用迁移工具前，您需要进行一些简单的配置。下面我们将详细说明如何配置、运行。
+
+2. 准备环境
+
+迁移工具使用python实现的，在使用前，需要安装一些依赖包，您可以使用下面的命令进行安装（确保pip已经安装了）：
+pip install requests
+pip install qiniu
+pip install boto3
+pip install -U cos-python-sdk-v5
+pip install oss2
+
+3. 迁移工具目录树
+
+osstransfer
+├── conf                        #osstransfer保存配置的目录
+│   └── ts.cfg                  #osstransfer配置文件，后面将介绍如何配置一些选项
+├── src                         #python 源文件目录
+├── jobs                        #保存任务(job)的目录，请不要手动修改该目录下的任何文件，下面是一个例子
+│   └── test-urlfile            #该job的ID为test-urlfile
+│       ├── job.cfg             #该job的配置文件
+│       ├── status              #该job的状态
+│       ├── test-urlfile-check-error-list.txt       #保存校验失败的文件，并记录了失败的原因
+│       ├── test-urlfile-check-md5-list.txt         #保存校验成功的文件的md5值
+│       └── test-urlfile-transfer-error-list.txt    #保存迁移失败的文件，并记录了失败的原因
+├── logs                        #日志目录
+│   ├── log-commands.txt        #记录执行的命令，我们是使用一些命令来操作该系统的，将在后面介绍
+│   ├── log-jobmanager.txt      #jobmanager的日志
+│   ├── log-mastermanager.txt   #mastermanager的日志
+│   ├── log-masters             #所有master的日志
+│   ├── log-workermanager.txt   #workermanager的日志
+│   └── log-workers             #所有worker的日志
+├── job.cfg                     #job的配置示例
+├── machines_ip.cfg             #当我们使用多台机器，也就是集群的方式进行迁移时，需要配置该文件，将在后面介绍
+├── readme                      #this doc
+└── ts.py                       #命令脚本
+
+4．配置job
+
+我们把一个迁移任务称为是一个job，关于job的配置选项比较多，请仔细阅读。
+job-ID:指定该任务的名字，建议取一个有意义的名字，且不要和oss上的文件同名，因为该系统会在oss上创建一个以job-ID命名的目录，用来存放临时文件；
+job-type:job的类型只有两种，transfer(迁移)、check(校验)
+
+src-filetype:指定源数据类型,可选的有：diskfile,urlfile,s3file,qiniufile,tencentfile，aliyunfile，baidufile
+提示：diskfile和urlfile不需要指定这些选项：src-accesskey、src-secretkey、src-endpoint、src-bucketName、src-prefix
+src-accesskey:
+src-secretkey:
+src-endpoint:
+src-bucketName:
+src-prefix:指定目录，并以/结尾
+src-file-list:使用绝对路径指定一个文件，把需要迁移的文件列表保存在该文件中，文件格式如下：filepath\tfilesize
+src-absolutepath:当src-filetype为diskfile时，您需要配置该选项，指定一个目录
+
+des-accesskey:
+des-secretkey:
+des-endpoint:
+des-bucketName:
+des-prefix =
+
+sync-enable-increment:是否开启增量同步(默认为开启)，True or False
+sync-increment-interval:sync-enable-increment=True时生效,设定同步的间隔时间，单位为秒，默认为一天(3600*24=86400)
+sync-since:设定一个时间，只会迁移最后更改时间在该时间之后的文件,时间格式为：YYYY-MM-DD HH:MM:SS,默认值为1970-01-01 08:00:00
+
+check-time = 可选的有(1)never:从不验证(2)now:迁移完成后立即验证, 默认为now
+check-mode:指定验证模式(默认为md5)，可选的有(1)head:仅查看云存储上是否有该文件，花费时间少(2)md5:使用md5进行验证，耗费时间多，大致相当于迁移的时间
+
+5．命令
+
+--help                                  #show this document
+start                                   #start s3transfer
+stop                                    #stop s3transfer
+add                                     #add a job
+rm                                      #remove a job
+pause                                   #pause a job
+continue                                #continue execute a job that you paused
+redo                                    #clean all history about the job, and redo it
+look                                    #look the configuration of the spefic job
+edit                                    #edit the configuration of the spefic job
+set                                     #set somethings
+--max-master-num=                       #set the max number of master
+--max-worker-num=                       #set the max number of master
+--msg_to=                               #set mail sender, the format is, mailaddr:passwd
+--msg_from=                             #set mail receiver, the format is, mailaddr
+status                                  #show all jobs' status
+--job                                   #show all jobs' status
+--jobID=                                #show the specific job status
+--machine                               #show all machines' status
+--ip=                                   #show the specific machine status
+--mail                                  #show mail infomation
+提示：推荐您设置msg_to和msg_from，当有异常或job完成时，会给您发邮件
+注意:命令edit只能对不在运行状态的job进行重新配置，并且不要使用该命令去修改job-ID
+
+6．运行一个job
+
+下面我们试着去运行一个job:
+(1)启动该系统
+python ts.py start
+(2)在job.cfg中配置一个job
+(3)配置完成后，加入到系统中
+python ts.py add job.cfg
+(4)如果系统中有空闲的master,该任务就会被执行，查看该任务的状态
+python ts.py status
+
+7．多机器下运行
+
+前面提到machines_ip.cfg这个文件，如果我们想使用多台机器，只要把机器的ip填入该文件，并在对应机器上运行该系统(python ts.py start)就可以了。
+提示：我们支持动态配置，您可以随意增减机器，而不用停止job.
+注意：machines_ip.cfg中第一台机器是主机器, add, rm等这些命令都应该在该台机器上执行
+
