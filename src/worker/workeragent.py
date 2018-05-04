@@ -88,7 +88,8 @@ class WorkerAgent():
                 if not isRightTime:
                     raise Exception
                 keyRemovedSlash = key[1:] if key.startswith('/') else key
-                desKey = self.destination['prefix'] + keyRemovedSlash.decode('utf8')[len(self.source['prefix'].decode('utf-8')):].encode('utf-8')
+                srcPrefixRemovedSlash = self.source['prefix'][1:] if self.source['prefix'].startswith('/') else self.source['prefix']
+                desKey = self.destination['prefix'] + keyRemovedSlash.decode('utf8')[len(srcPrefixRemovedSlash.decode('utf-8')):].encode('utf-8')
                 if self.fileType == type.FileType.DiskFile:
                     log.info(desKey)
                     [isUploadOk,recordErrorReason] = self.upload_diskfile(desClient, key, desKey)
@@ -171,7 +172,8 @@ class WorkerAgent():
                 if not isRightTime:
                     raise Exception
                 keyRemovedSlash = key[1:] if key.startswith('/') else key
-                desKey = self.destination['prefix'] + keyRemovedSlash.decode('utf8')[len(self.source['prefix'].decode('utf-8')):].encode('utf-8')
+                srcPrefixRemovedSlash = self.source['prefix'][1:] if self.source['prefix'].startswith('/') else self.source['prefix']
+                desKey = self.destination['prefix'] + keyRemovedSlash.decode('utf8')[len(srcPrefixRemovedSlash.decode('utf-8')):].encode('utf-8')
                 if self.checkMode == 'md5':
                     [isCheckOk,recordErrorReason] = self.check_with_md5(srcClient, desClient, key, desKey)
                 elif self.checkMode == 'head':
