@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b90df2-b1f2-402c-9ed2-19efd90d7da9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/clean.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manager/commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/master/master.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/master/master.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/master/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/master/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/master/taskpool.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/master/taskpool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/worker/workeragent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/worker/workeragent.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +19,8 @@
       <file leaf-file-name="taskpool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/master/taskpool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7582">
-              <caret line="446" column="17" selection-start-line="446" selection-start-column="17" selection-end-line="446" selection-end-column="17" />
+            <state relative-caret-position="-476">
+              <caret line="456" column="30" lean-forward="true" selection-start-line="456" selection-start-column="30" selection-end-line="456" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -32,8 +28,17 @@
       <file leaf-file-name="commands.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/manager/commands.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
-              <caret line="247" column="29" selection-start-line="247" selection-start-column="29" selection-end-line="247" selection-end-column="29" />
+            <state relative-caret-position="250">
+              <caret line="236" column="31" selection-start-line="236" selection-start-column="14" selection-end-line="236" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clean.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/common/utils/clean.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -41,17 +46,17 @@
       <file leaf-file-name="log-master-4244.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4244.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-94">
+            <state relative-caret-position="510">
               <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log-master-4245.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="log-master-4245.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4245.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -68,17 +73,8 @@
       <file leaf-file-name="master.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/master/master.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workeragent.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/worker/workeragent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5406">
-              <caret line="318" column="89" selection-start-line="318" selection-start-column="85" selection-end-line="318" selection-end-column="89" />
+            <state relative-caret-position="204">
+              <caret line="84" column="57" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -162,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/master/utils/collectinfo.py" />
         <option value="$PROJECT_DIR$/logs/log-masters/log-master-4246.txt" />
         <option value="$PROJECT_DIR$/conf/ts.cfg" />
         <option value="$PROJECT_DIR$/jobs/124/sync" />
@@ -213,6 +208,7 @@
         <option value="$PROJECT_DIR$/src/master/task.py" />
         <option value="$PROJECT_DIR$/src/master/master.py" />
         <option value="$PROJECT_DIR$/src/manager/commands.py" />
+        <option value="$PROJECT_DIR$/src/common/utils/clean.py" />
       </list>
     </option>
   </component>
@@ -227,6 +223,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,11 +236,41 @@
               <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="s3transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s3transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s3transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s3transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s3transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s3transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="worker" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -262,8 +289,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.workeragent">
-    <configuration name="qiniuclient" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.clean">
+    <configuration name="clean" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="s3transfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -271,11 +298,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/common/sdk" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/common/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/common/sdk/qiniuclient.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/common/utils/clean.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -355,18 +382,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.url" />
-      <item itemvalue="Python.qiniuclient" />
       <item itemvalue="Python.workermanager" />
       <item itemvalue="Python.worker" />
       <item itemvalue="Python.workeragent" />
+      <item itemvalue="Python.clean" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.clean" />
         <item itemvalue="Python.workeragent" />
         <item itemvalue="Python.url" />
         <item itemvalue="Python.worker" />
         <item itemvalue="Python.workermanager" />
-        <item itemvalue="Python.qiniuclient" />
       </list>
     </recent_temporary>
   </component>
@@ -384,16 +411,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-11" width="1307" height="780" extended-state="6" />
+    <frame x="54" y="-11" width="1867" height="984" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20536399" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20536193" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34590518" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34562212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.37951806" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.42741936" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978448" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.3297414" />
@@ -418,13 +446,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/master/master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/master/taskpool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -641,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/master/master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/job.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -662,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/master/taskpool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7582">
-          <caret line="446" column="17" selection-start-line="446" selection-start-column="17" selection-end-line="446" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/sdk/s3client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2074">
@@ -676,24 +683,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/manager/commands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="247" column="29" selection-start-line="247" selection-start-column="29" selection-end-line="247" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4244.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94">
+        <state relative-caret-position="510">
           <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4245.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/master/master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="84" column="57" selection-start-line="84" selection-start-column="57" selection-end-line="84" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/master/taskpool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-476">
+          <caret line="456" column="30" lean-forward="true" selection-start-line="456" selection-start-column="30" selection-end-line="456" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/commands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="236" column="31" selection-start-line="236" selection-start-column="14" selection-end-line="236" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/utils/clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
         </state>
       </provider>
     </entry>

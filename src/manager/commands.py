@@ -48,8 +48,8 @@ def show_help():
            '    set                     set somethings\n'+
            '         --max-master-num=  set the max number of master\n'+
            '         --max-worker-num=  set the max number of master\n'+
-           '         --msg_to=          set mail sender, the format is, mailaddr:passwd\n' +
-           '         --msg_from=        set mail receiver, the format is, mailaddr\n' +
+           '         --msg_to=          set mail receiver, the format is, mailaddr\n' +
+           '         --msg_from=        set mail sender, the format is, mailaddr:passwd\n' +
            '    status                  show all jobs\' status\n'+
            '         --job              show all jobs\' status\n'+
            '         --jobID=           show the specific job status\n'+
