@@ -137,13 +137,33 @@ def add_job(jobpath):
         if os.path.exists(s3transferPath+'/jobs/'+str(jobID)):
             print 'job:' + str(jobID) + ' exists already, ' + 'maybe you can change the job-ID'
             return False
+        if does_has_object_with_prefix_jobID(job) is True:
+            isDeleteObjectsWithPrefixJobID = raw_input('This is very important, and please read it carefully!!!\n'
+                +'We detect some objects with the same prefix of job-ID. Maybe they are important data or temporary files of the former transfer.\n'
+                +'If you want to continue, we will delete them y/n ')
+            if isDeleteObjectsWithPrefixJobID == "Y" or isDeleteObjectsWithPrefixJobID == "y":
+                delete_tmpfiles_in_oss(jobID, job)
+            else:
+                return False
         os.mkdir(s3transferPath+'/jobs/'+str(jobID))
         if save_job_to_local(jobpath, job['job-ID'], job['sync-enable-increment'], job['sync-increment-interval']) and add_job_to_jobmaster(job):
             print 'add job:'+str(jobID)+' successfully, status:ready'
         else:
             rm_job(jobID)
             print 'add job:'+str(jobID)+' failed, you can look log/log-commands.txt to see why'
-            
+
+def does_has_object_with_prefix_jobID(job):
+    try:
+        s3Client = clientfactory.create_client(type.FileType.S3File, job['des-accesskey'], job['des-secretkey'],job['des-endpoint'])
+        objects, isTruncated, nextmarker = s3Client.list_objects_without_delimiter(job['des-bucketName'], job['job-ID'], '', 1)
+        if objects:
+            return True
+        else:
+            return False
+    except Exception, e:
+        log.info(e)
+        return False
+
 def save_job_to_local(jobpath, jobID, isEnableIncrementSync, interval):
     try:
         srcJobFile = open(jobpath, 'r')
@@ -208,9 +228,10 @@ def rm_job(jobIDNeededRM, ):
                 return False
     print 'rm '+jobIDNeededRM + ' failed, it doesn\'t exist'
 
-def delete_tmpfiles_in_oss(jobID):
+def delete_tmpfiles_in_oss(jobID, job = None):
     print 'start to delete tmp files in oss, please wait...'
-    job = configoperations.read_job(s3transferPath+'/jobs/'+jobID+'/job.cfg', True)
+    if job is None:
+        job = configoperations.read_job(s3transferPath+'/jobs/'+jobID+'/job.cfg', True)
     if job:
         s3Client = clientfactory.create_client(type.FileType.S3File, job['des-accesskey'], job['des-secretkey'], job['des-endpoint'])
         clean.clean_with_prefix(s3Client, job['des-bucketName'], jobID)

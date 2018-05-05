@@ -343,8 +343,6 @@ class WorkerAgent():
         if self.md5List and self.jobType == type.JobType.Check:
             self.desClient.put_object(self.destination['bucketName'], self.keyForTaskPath+'md5list','\n'.join(self.md5List))
 
-
-
 if __name__ == '__main__':
     myhash = hashlib.md5()
     print  myhash.hexdigest().lower()

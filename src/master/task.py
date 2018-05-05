@@ -28,6 +28,10 @@ class TransferOrCheckTask(assignment.Assignment):
         self.checkmode = checkmode
         self.sync = sync
         self.type = type.Task.TransferOrCheck
+        #string is more safe than int or long for xmlrpc
+        #以byte为单位
+        self.taskFileSize = "1"
+        self.taskFileNumbers = "1"
     
     def with_attribute(self, attrDict):
         if attrDict.has_key('ID'):
@@ -76,6 +80,18 @@ class TransferOrCheckTask(assignment.Assignment):
     
     def get_type(self):
         return self.type
+
+    def set_taskFileSize(self, size):
+        self.taskFileSize = str(size)
+
+    def get_taskFileSize(self):
+        return long(self.taskFileSize)
+
+    def set_setTaskFileNumbers(self, numbers):
+        self.taskFileNumbers = str(numbers)
+
+    def get_taskFileNumbers(self):
+        return long(self.taskFileNumbers)
     
     def to_string(self):
         return (self.jobType + ' task, synctaskID:'+self.synctaskID+

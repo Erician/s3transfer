@@ -91,6 +91,7 @@ class TaskPool:
                         self.tasklistStartPosToFind += 1
                         taskID = generateID.taskID(str(time.time())+' '+self.destination['bucketName']+' '+str(self.tasklistStartPosToFind-1))
                         task.set_ID(taskID)
+                        task.set_startTime(time.time())
                         return task
                 self.tasklistStartPosToFind += 1
             return None
@@ -574,6 +575,9 @@ class TaskPool:
         keyForTaskPath = taskPrefix+str(taskNumber)+'/'
         task = TransferOrCheckTask(self.synctask,self.jobType,self.source,self.destination,
                                         keyForTaskPath,self.master_ip_port,self.check['mode'],self.sync)
+
+        task.set_taskFileSize(currentSize)
+        task.set_setTaskFileNumbers(currentFileNumbers)
         task.set_status(status.TASK.ready)
         self.put(task)
         log.info( 'task'+str(taskNumber) +' '+ self.synctask +' '+ self.jobType 

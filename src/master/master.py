@@ -73,8 +73,8 @@ class Master:
 
     def get_status(self):
         return self.masterstatus
-    
-    def check_workermanager(self):
+
+    def check_workermanagers(self):
         try:
             self.__bigGranularityLock.acquire()
             for ip, workermanagerinfo in self.__workermanagerdict.items():
@@ -88,6 +88,12 @@ class Master:
                         self.taskPool.set_task_status(pos, status.TASK.done, status.TASK.dispatched)
                     self.__workermanagerdict.pop(ip)
                     break
+                else:
+                    if self.__workerSpeed[ip] != 0:
+                        for task in workermanagerinfo.get_taskqueue():
+                            if (time.time() - float(task.get_startTime())) >\
+                                (float(task.get_taskFileSize())/1024/self.__workerSpeed[ip]) * 3:
+                                self.taskPool.set_task_status(decodeID.taskID(task.get_ID()), status.TASK.done, status.TASK.dispatched)
         except Exception, e:
             log.info(e)
         finally:
@@ -454,7 +460,7 @@ def monitor_thread():
         sleep(10)
         try:
             s = xmlrpclib.ServerProxy('http://'+configoperations.get_master_ip()+':'+str(masterport))
-            s.check_workermanager()
+            s.check_workermanagers()
         except Exception,e:
             log.warning(e)
 
