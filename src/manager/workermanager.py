@@ -56,7 +56,7 @@ class WorkerManager:
         WorkerManager.ip = ip
     
     def get_status(self):
-        #有可能遍历WorkerManager.workerqueue会失败，原因是dequeu对这种遍历不是线程安全的，这种情况下直接返回busy
+        #有可能遍历WorkerManager.workerqueue会失败，原因是dequeue对这种遍历不是线程安全的，这种情况下直接返回busy
         try:
             if len(WorkerManager.taskqueue) >= WorkerManager.MaxWorkerNum:
                 return status.WORKER.busy
@@ -299,13 +299,13 @@ def get_current_taskID(port):
     return status.WORKER.shutdown
 
 def start():
-    dispatcher_thread = threading.Thread(target=manager_thread, args=())
-    dispatcher_thread.setDaemon(True)
-    dispatcher_thread.start()
+    dispatcherThread = threading.Thread(target=manager_thread, args=())
+    dispatcherThread.setDaemon(True)
+    dispatcherThread.start()
     
-    dispatcher_thread = threading.Thread(target=monitor_thread, args=())
-    dispatcher_thread.setDaemon(True)
-    dispatcher_thread.start()
+    monitorThread = threading.Thread(target=monitor_thread, args=())
+    monitorThread.setDaemon(True)
+    monitorThread.start()
     
     start_workermanager()
 

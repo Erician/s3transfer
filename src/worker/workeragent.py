@@ -17,8 +17,11 @@ import workermessage
 log = logging.getLogger('root')
            
 #do more complex task for worker
-class WorkerAgent():
+class WorkerAgent:
     lock = threading.Lock()
+    FileQueueDefaultCapacity = 16
+    FileQueueSleepTime = 0
+    OssServiceTimeOut = 3
     CheckPartSize = 8 * 1024 * 1024
     queue = None
     fileNumbersToCountDown = 0
@@ -52,7 +55,7 @@ class WorkerAgent():
         self.initialClassVar()
 
     def initialClassVar(self):
-        self.queue = Queue(100)
+        self.queue = Queue(WorkerAgent.FileQueueDefaultCapacity)
         self.fileNumbersToCountDown = long(self.fileNumbers)
         self.errorFileList = list()
         self.md5List = list()
@@ -302,6 +305,7 @@ class WorkerAgent():
         line = self.lines.readline()
         cntLine = 0 
         while (line):
+            time.sleep(self.FileQueueSleepTime)     #for flow control
             self.queue.put([cntLine,line])
             cntLine+=1
             line = self.lines.readline()
@@ -328,6 +332,11 @@ class WorkerAgent():
             subThreads.append(th)
             th.setDaemon(True)
             th.start()
+
+        th = threading.Thread(target=self.flowcontrol_thread, args=())
+        subThreads.append(th)
+        th.setDaemon(True)
+        th.start()
         return subThreads
                 
     def upload_list(self):
@@ -342,6 +351,37 @@ class WorkerAgent():
                        
         if self.md5List and self.jobType == type.JobType.Check:
             self.desClient.put_object(self.destination['bucketName'], self.keyForTaskPath+'md5list','\n'.join(self.md5List))
+
+    def flowcontrol_thread(self):
+        cntTimeOut = 0
+        while True:
+            try:
+                if self.isUploadAll is True:
+                    return
+
+                if self.does_oss_service_timeout():
+                    cntTimeOut += 1
+                else:
+                    if cntTimeOut == 0:
+                        self.OssServiceTimeOut = self.OssServiceTimeOut -1 if self.OssServiceTimeOut != 0 else 0
+                    cntTimeOut = 0
+
+                if cntTimeOut >= 4:
+                    self.OssServiceTimeOut = self.OssServiceTimeOut * 2 if self.OssServiceTimeOut != 0 else 1
+                    cntTimeOut = 0
+            except Exception, e:
+                log.info(e)
+            time.sleep(5)
+
+
+    def does_oss_service_timeout(self):
+        try:
+            startTime = time.time()
+            self.desClient.list_objects_without_delimiter(self.destination['bucketName'], '', '', 1)
+            return time.time() - startTime > WorkerAgent.OssServiceTimeOut
+        except Exception, e:
+            log.info(e)
+            return False
 
 if __name__ == '__main__':
     myhash = hashlib.md5()
