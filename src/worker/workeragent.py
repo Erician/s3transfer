@@ -245,9 +245,9 @@ class WorkerAgent:
                 raise Exception
             elif size != 0:
                 for partNumber in range(1, size // WorkerAgent.CheckPartSize + 2):
-                    text = urltools.download_by_rang(url, (partNumber - 1) * WorkerAgent.CheckPartSize, partNumber * WorkerAgent.CheckPartSize - 1)
-                    if text:
-                        myhash.update(text)
+                    content = urltools.download_by_rang(url, (partNumber - 1) * WorkerAgent.CheckPartSize, partNumber * WorkerAgent.CheckPartSize - 1)
+                    if content:
+                        myhash.update(content)
             return myhash.hexdigest().lower()
         except Exception,e:
             log.error(e)

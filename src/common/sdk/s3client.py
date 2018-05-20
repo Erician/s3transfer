@@ -333,13 +333,13 @@ class S3Client(basesdk.BaseSDK):
             uploadID = multiPartUpload['UploadId']
             partInfoDict = {'Parts': []}
             for partNumber in range(1, size//S3Client.Multipart_Chunksize+2):
-                text = urltools.download_by_rang(url, (partNumber-1)*S3Client.Multipart_Chunksize, partNumber*S3Client.Multipart_Chunksize-1)
+                content = urltools.download_by_rang(url, (partNumber-1)*S3Client.Multipart_Chunksize, partNumber*S3Client.Multipart_Chunksize-1)
                 part = self.client.upload_part(
                     Bucket=bucketName,
                     Key=keyName,
                     PartNumber=partNumber,
                     UploadId=multiPartUpload['UploadId'],
-                    Body=text if text else ""
+                    Body=content if content else ""
                 )
                 # PartNumber and ETag are needed
                 partInfoDict['Parts'].append({

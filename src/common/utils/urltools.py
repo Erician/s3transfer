@@ -26,7 +26,7 @@ def download_by_rang(url, start, end):
             headers = {'Range': 'bytes=%d-%d' % (start, end)}
             response = requests.get(url, stream=True, headers=headers, timeout=60)
             if response.status_code == 206:
-                return response.text
+                return response.content
         except Exception, e:
             log.info(e)
         retrytime += 1
@@ -39,7 +39,7 @@ def download(url):
         try:
             response = requests.get(url, stream=True, timeout=60)
             if response.status_code == 200:
-                return response.text
+                return response.content
         except Exception, e:
             log.info(e)
         retrytime += 1
