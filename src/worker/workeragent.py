@@ -181,15 +181,19 @@ class WorkerAgent:
                 if self.checkMode == 'md5':
                     [isCheckOk,recordErrorReason] = self.check_with_md5(srcClient, desClient, key, desKey)
                 elif self.checkMode == 'head':
-                    [isCheckOk,recordErrorReason] = self.check_with_head(desClient, desKey)
+                    [isCheckOk,recordErrorReason] = self.check_with_head(desClient, desKey, size)
             except Exception,e:
                 log.error(e)
                 isCheckOk = False
             finally:
                 self.save_objectstatus(key, lineNum, size, isCheckOk, recordErrorReason)
     
-    def check_with_head(self,desClient, desKey):
-        return [desClient.does_object_exists(self.destination['bucketName'], desKey),'']
+    def check_with_head(self,desClient, desKey, size):
+        if desClient.does_object_exists(self.destination['bucketName'], desKey) is False:
+            return [False, desKey + ' does not exist']
+        if long(desClient.get_object_size(self.destination['bucketName'], desKey)) != long(size):
+            return [False, 'the length of ' + desKey + ' is not ' + str(size)]
+        return [True, '']
     
     def check_with_md5(self,srcClient, desClient, key, desKey):
         if self.fileType == type.FileType.DiskFile:
@@ -277,7 +281,7 @@ class WorkerAgent:
                 log.info('uploaded ok:'+key + '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
             elif self.jobType == type.JobType.Check:
                 self.md5List.append(key+'\t'+errorReason)
-                log.info('check ok:'+key +'\tmd5:'+errorReason+ '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
+                log.info('check ok:'+key +'\t'+errorReason+ '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
         else:
             self.failed = self.failed + 1
             self.failedSize = self.failedSize+long(size)
@@ -285,7 +289,7 @@ class WorkerAgent:
             if self.jobType == type.JobType.Transfer:
                 log.info('upload failed:'+key + '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
             elif self.jobType == type.JobType.Check:
-                log.info('check failed:'+key +'\tmd5:'+errorReason + '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
+                log.info('check failed:'+key +'\t'+errorReason + '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
         self.fileNumbersToCountDown -= 1
         self.lock.release()
                 

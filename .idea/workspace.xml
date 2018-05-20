@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1b90df2-b1f2-402c-9ed2-19efd90d7da9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/master/master.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/master/master.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/worker/workeragent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/worker/workeragent.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,19 +32,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log-master-4247.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4247.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="log-master-4246.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4246.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="log-master-4245.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4245.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="s3client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/sdk/s3client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="217" column="25" lean-forward="true" selection-start-line="217" selection-start-column="25" selection-end-line="217" selection-end-column="25" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="log-jobmanager.txt" pinned="false" current-in-tab="false">
@@ -67,20 +64,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="job.cfg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="job.cfg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/test-urlfile/job.cfg">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+            <state relative-caret-position="68">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workeragent.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="log-worker-5253.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/log-workers/log-worker-5253.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="156" column="76" selection-start-line="156" selection-start-column="76" selection-end-line="156" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worker.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/worker/worker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workeragent.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/worker/workeragent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="276">
+              <caret line="283" column="45" lean-forward="true" selection-start-line="283" selection-start-column="45" selection-end-line="283" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -111,7 +126,6 @@
       <find>access</find>
       <find>delete_tmpfiles_in_s3</find>
       <find>ACCE</find>
-      <find>check</find>
       <find>from_fi</find>
       <find>check_workermanagers</find>
       <find>check_workermanager</find>
@@ -126,6 +140,7 @@
       <find>self.queue</find>
       <find>text</find>
       <find>EachRequestAndResponseTime</find>
+      <find>check</find>
     </findStrings>
     <dirStrings>
       <dir>/usr/local/lib/python2.7/dist-packages/botocore</dir>
@@ -183,11 +198,11 @@
         <option value="$PROJECT_DIR$/src/manager/workermanager.py" />
         <option value="$PROJECT_DIR$/jobs/test-diskfile/job.cfg" />
         <option value="$PROJECT_DIR$/job.cfg" />
-        <option value="$PROJECT_DIR$/jobs/test-urlfile/job.cfg" />
         <option value="$PROJECT_DIR$/src/common/utils/urltools.py" />
         <option value="$PROJECT_DIR$/src/worker/workermessage.py" />
-        <option value="$PROJECT_DIR$/src/worker/workeragent.py" />
         <option value="$PROJECT_DIR$/src/master/master.py" />
+        <option value="$PROJECT_DIR$/jobs/test-urlfile/job.cfg" />
+        <option value="$PROJECT_DIR$/src/worker/workeragent.py" />
       </list>
     </option>
   </component>
@@ -402,14 +417,14 @@
     <frame x="54" y="-11" width="1867" height="984" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20536193" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20536193" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32937366" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34590518" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.30184332" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.30184332" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978448" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.3297414" />
@@ -601,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/worker/worker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/manager/workermanager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5100">
@@ -622,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/sdk/s3client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="54" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/utils/clean.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -640,13 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/log-workers/log-worker-5253.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
-          <caret line="1731" column="602" selection-start-line="1731" selection-start-column="602" selection-end-line="1731" selection-end-column="602" />
         </state>
       </provider>
     </entry>
@@ -671,22 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/worker/workeragent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4247.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4246.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4245.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4244.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -708,13 +686,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/test-diskfile/job.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/test-diskfile/job.cfg" />
     <entry file="file://$PROJECT_DIR$/logs/log-jobmanager.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -722,10 +694,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/worker/worker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4247.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4245.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/test-urlfile/job.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/sdk/s3client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="217" column="25" lean-forward="true" selection-start-line="217" selection-start-column="25" selection-end-line="217" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-masters/log-master-4246.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log-workers/log-worker-5253.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="156" column="76" selection-start-line="156" selection-start-column="76" selection-end-line="156" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/worker/workeragent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="283" column="45" lean-forward="true" selection-start-line="283" selection-start-column="45" selection-end-line="283" selection-end-column="45" />
         </state>
       </provider>
     </entry>
