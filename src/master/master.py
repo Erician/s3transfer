@@ -43,6 +43,7 @@ class ThreadXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
     pass
 
 class Master:
+    EachRequestAndResponseTime = 0.04
     __bigGranularityLock = threading.Lock()
     __workermanagerdict = dict()
     __job = None
@@ -92,7 +93,7 @@ class Master:
                     if self.__workerSpeed[ip] != 0:
                         for task in workermanagerinfo.get_taskqueue():
                             if (time.time() - float(task.get_startTime())) >\
-                                (float(task.get_taskFileSize())/1024/self.__workerSpeed[ip]) * 3:
+                                (float(task.get_taskFileSize())/1024/self.__workerSpeed[ip] + task.get_taskFileNumbers()*Master.EachRequestAndResponseTime) * 3:
                                 self.taskPool.set_task_status(decodeID.taskID(task.get_ID()), status.TASK.done, status.TASK.dispatched)
         except Exception, e:
             log.info(e)

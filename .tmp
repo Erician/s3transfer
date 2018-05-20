@@ -1,61 +1,55 @@
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
-tcp        0      0 127.0.0.1:63342         0.0.0.0:*               LISTEN      2502/java       
-tcp        0      0 0.0.0.0:4242            0.0.0.0:*               LISTEN      9106/python     
-tcp        0      0 0.0.0.0:4243            0.0.0.0:*               LISTEN      9108/python     
-tcp        0      0 0.0.0.0:4244            0.0.0.0:*               LISTEN      9157/python     
+tcp        0      0 127.0.0.1:63342         0.0.0.0:*               LISTEN      2641/java       
+tcp        0      0 0.0.0.0:4242            0.0.0.0:*               LISTEN      5450/python     
+tcp        0      0 0.0.0.0:4243            0.0.0.0:*               LISTEN      5452/python     
+tcp        0      0 0.0.0.0:4244            0.0.0.0:*               LISTEN      5529/python     
 tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN      -               
 tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -               
-tcp        0      0 127.0.0.1:6942          0.0.0.0:*               LISTEN      2502/java       
-tcp        0      0 0.0.0.0:5252            0.0.0.0:*               LISTEN      9110/python     
-tcp        0      0 0.0.0.0:5253            0.0.0.0:*               LISTEN      9223/python     
+tcp        0      0 127.0.0.1:6942          0.0.0.0:*               LISTEN      2641/java       
+tcp        0      0 0.0.0.0:5252            0.0.0.0:*               LISTEN      5454/python     
+tcp        0      0 0.0.0.0:5253            0.0.0.0:*               LISTEN      5582/python     
 tcp6       0      0 ::1:631                 :::*                    LISTEN      -               
-udp        0      0 0.0.0.0:5353            0.0.0.0:*                           3028/chrome     
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           3839/chrome     
 udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -               
-udp        0      0 0.0.0.0:60570           0.0.0.0:*                           -               
-udp        0      0 0.0.0.0:49082           0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:47466           0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:59999           0.0.0.0:*                           -               
 udp        0      0 127.0.1.1:53            0.0.0.0:*                           -               
 udp        0      0 0.0.0.0:68              0.0.0.0:*                           -               
 udp        0      0 0.0.0.0:631             0.0.0.0:*                           -               
-udp6       0      0 :::5353                 :::*                                3028/chrome     
+udp6       0      0 :::5353                 :::*                                3839/chrome     
 udp6       0      0 :::5353                 :::*                                -               
-udp6       0      0 :::53748                :::*                                -               
+udp6       0      0 :::59746                :::*                                -               
 raw6       0      0 :::58                   :::*                    7           -               
 Active UNIX domain sockets (only servers)
 Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path
-unix  2      [ ACC ]     STREAM     LISTENING     12047    -                   /run/systemd/private
-unix  2      [ ACC ]     STREAM     LISTENING     19179    1372/systemd        /run/user/1000/systemd/private
-unix  2      [ ACC ]     SEQPACKET  LISTENING     12057    -                   /run/udev/control
-unix  2      [ ACC ]     STREAM     LISTENING     48871    4787/unity-files-da @eric-com.canonical.Unity.Scope.files.T9597132763346
-unix  2      [ ACC ]     STREAM     LISTENING     20271    -                   /run/user/1000/keyring/control
-unix  2      [ ACC ]     STREAM     LISTENING     12056    -                   /run/systemd/fsck.progress
-unix  2      [ ACC ]     STREAM     LISTENING     12063    -                   /run/systemd/journal/stdout
-unix  2      [ ACC ]     STREAM     LISTENING     18121    -                   /tmp/.X11-unix/X0
-unix  2      [ ACC ]     STREAM     LISTENING     20388    -                   /run/user/1000/keyring/pkcs11
-unix  2      [ ACC ]     STREAM     LISTENING     20390    -                   /run/user/1000/keyring/ssh
-unix  2      [ ACC ]     STREAM     LISTENING     19350    1572/fcitx          /tmp/fcitx-socket-:0
-unix  2      [ ACC ]     STREAM     LISTENING     22733    1708/gnome-session- /tmp/.ICE-unix/1708
-unix  2      [ ACC ]     STREAM     LISTENING     18779    -                   /var/run/NetworkManager/private-dhcp
-unix  2      [ ACC ]     STREAM     LISTENING     22372    2465/sogou-qimpanel /tmp/sogou-qimpanel-celleric
-unix  2      [ ACC ]     STREAM     LISTENING     22375    2465/sogou-qimpanel /tmp/sogou-qimpaneleric
-unix  2      [ ACC ]     STREAM     LISTENING     21789    2074/pulseaudio     /run/user/1000/pulse/native
-unix  2      [ ACC ]     STREAM     LISTENING     22732    1708/gnome-session- @/tmp/.ICE-unix/1708
-unix  2      [ ACC ]     STREAM     LISTENING     21390    -                   /home/eric/.gnupg/S.gpg-agent
-unix  2      [ ACC ]     STREAM     LISTENING     18120    -                   @/tmp/.X11-unix/X0
-unix  2      [ ACC ]     STREAM     LISTENING     15687    -                   /run/acpid.socket
-unix  2      [ ACC ]     STREAM     LISTENING     29954    3028/chrome         /tmp/.com.google.Chrome.tma1nM/SingletonSocket
-unix  2      [ ACC ]     STREAM     LISTENING     49596    4774/unity-scope-ho @eric-com.canonical.Unity.Master.Scope.files.T9595192009949
-unix  2      [ ACC ]     STREAM     LISTENING     48981    4943/wineserver     socket
-unix  2      [ ACC ]     STREAM     LISTENING     49595    4774/unity-scope-ho @eric-com.canonical.Unity.Master.Scope.applications.T9595182884114
-unix  2      [ ACC ]     STREAM     LISTENING     49610    4785/unity-scope-lo @eric-com.canonical.Unity.Scope.applications.T9606465629009
-unix  2      [ ACC ]     STREAM     LISTENING     19308    1597/dbus-daemon    @/tmp/dbus-2FBW7JMGZE
-unix  2      [ ACC ]     STREAM     LISTENING     21306    1380/upstart        @/com/ubuntu/upstart-session/1000/1380
-unix  2      [ ACC ]     STREAM     LISTENING     49608    4785/unity-scope-lo @eric-com.canonical.Unity.Scope.scopes.T9606182656877
-unix  2      [ ACC ]     STREAM     LISTENING     21530    1682/dbus-daemon    @/tmp/dbus-rhcWdBBOHd
-unix  2      [ ACC ]     STREAM     LISTENING     19278    1528/dbus-daemon    @/tmp/dbus-amKCj0yDN4
-unix  2      [ ACC ]     STREAM     LISTENING     15688    -                   /run/snapd.socket
-unix  2      [ ACC ]     STREAM     LISTENING     15689    -                   /run/snapd-snap.socket
-unix  2      [ ACC ]     STREAM     LISTENING     15690    -                   /run/uuidd/request
-unix  2      [ ACC ]     STREAM     LISTENING     15691    -                   /var/run/avahi-daemon/socket
-unix  2      [ ACC ]     STREAM     LISTENING     15692    -                   /var/run/cups/cups.sock
-unix  2      [ ACC ]     STREAM     LISTENING     15693    -                   /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     12654    -                   /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     20657    1346/systemd        /run/user/1000/systemd/private
+unix  2      [ ACC ]     SEQPACKET  LISTENING     12664    -                   /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     12662    -                   /run/systemd/journal/stdout
+unix  2      [ ACC ]     STREAM     LISTENING     23025    1847/gnome-session- @/tmp/.ICE-unix/1847
+unix  2      [ ACC ]     STREAM     LISTENING     24620    2332/sogou-qimpanel /tmp/sogou-qimpanel-celleric
+unix  2      [ ACC ]     STREAM     LISTENING     20661    -                   /run/user/1000/keyring/control
+unix  2      [ ACC ]     STREAM     LISTENING     24628    2332/sogou-qimpanel /tmp/sogou-qimpaneleric
+unix  2      [ ACC ]     STREAM     LISTENING     19638    -                   /tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     12673    -                   /run/systemd/fsck.progress
+unix  2      [ ACC ]     STREAM     LISTENING     20785    -                   /run/user/1000/keyring/pkcs11
+unix  2      [ ACC ]     STREAM     LISTENING     20787    -                   /run/user/1000/keyring/ssh
+unix  2      [ ACC ]     STREAM     LISTENING     20824    -                   /home/eric/.gnupg/S.gpg-agent
+unix  2      [ ACC ]     STREAM     LISTENING     20815    1543/fcitx          /tmp/fcitx-socket-:0
+unix  2      [ ACC ]     STREAM     LISTENING     23026    1847/gnome-session- /tmp/.ICE-unix/1847
+unix  2      [ ACC ]     STREAM     LISTENING     19662    -                   /var/run/NetworkManager/private-dhcp
+unix  2      [ ACC ]     STREAM     LISTENING     16680    -                   /run/snapd.socket
+unix  2      [ ACC ]     STREAM     LISTENING     21278    2082/pulseaudio     /run/user/1000/pulse/native
+unix  2      [ ACC ]     STREAM     LISTENING     19637    -                   @/tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     16681    -                   /run/snapd-snap.socket
+unix  2      [ ACC ]     STREAM     LISTENING     22630    1571/dbus-daemon    @/tmp/dbus-Id282VfDS4
+unix  2      [ ACC ]     STREAM     LISTENING     49826    3839/chrome         /tmp/.com.google.Chrome.SQhnrt/SingletonSocket
+unix  2      [ ACC ]     STREAM     LISTENING     20732    1502/dbus-daemon    @/tmp/dbus-OaeCUTik4p
+unix  2      [ ACC ]     STREAM     LISTENING     20700    1354/upstart        @/com/ubuntu/upstart-session/1000/1354
+unix  2      [ ACC ]     STREAM     LISTENING     20968    1824/dbus-daemon    @/tmp/dbus-5CYrbSetK6
+unix  2      [ ACC ]     STREAM     LISTENING     16682    -                   /run/uuidd/request
+unix  2      [ ACC ]     STREAM     LISTENING     16684    -                   /var/run/cups/cups.sock
+unix  2      [ ACC ]     STREAM     LISTENING     16685    -                   /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     16686    -                   /var/run/avahi-daemon/socket
+unix  2      [ ACC ]     STREAM     LISTENING     16687    -                   /run/acpid.socket

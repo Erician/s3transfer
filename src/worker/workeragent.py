@@ -23,6 +23,7 @@ class WorkerAgent:
     FileQueueSleepTime = 0
     OssServiceTimeOut = 3
     CheckPartSize = 8 * 1024 * 1024
+    EachRequestAndResponseTime = 0.04
     queue = None
     fileNumbersToCountDown = 0
     errorFileList = None
@@ -318,9 +319,10 @@ class WorkerAgent:
         self.upload_list()
         log.info('the cost time is '+ str(round(time.time()-startTime))+'s'+ ' and the average rate is '\
                   + str(round(float(self.uploadSize)/(time.time()-startTime)/1024,2))+'KB/s')
+        #minus the time of request and response time, EachRequestAndResponseTime is not very accurate
         return workermessage.TaskResult(self.fileNumbers,self.taskSize,self.succeeded,self.failed,
                                 self.uploadSize,round(time.time()-startTime),
-                                round(float(self.uploadSize)/(time.time()-startTime)/1024,2))
+                                round(float(self.uploadSize)/(time.time()-startTime-self.fileNumbers*WorkerAgent.EachRequestAndResponseTime)/1024,2))
         
     def generate_threads(self):
         subThreads = list()
