@@ -23,6 +23,7 @@ from common.enum import status
 from common.const import port, type
 from master.task import GenerateDiskFileListTask, TransferOrCheckTask
 from common.utils import readdata
+
 from time import sleep
 from collections import deque
 import workeragent
@@ -32,6 +33,7 @@ import threading
 from workermessage import WorkerMessage
 import logging
 from SocketServer import ThreadingMixIn
+from storage import Storage
 log = logging.getLogger('root')
 
 """异步的server类"""
@@ -41,15 +43,19 @@ class ThreadXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
 class Worker:
     generateDiskFileListLock = threading.Lock()
     transferOrCheckLock = threading.Lock()
-    DiskFileListFileNumbers = 2
+    DiskFileListFileNumbers = 1000
     def __init__(self, port):
         self.probeResponseList = list()
         self.port = port
         self.workerstatus = status.WORKER.ready
         self.current_taskID = ''
+        self.ip = ''
 
     def get_status(self):
         return self.workerstatus
+
+    def set_ip(self, ip):
+        self.ip = ip
 
     def get_current_taskID(self):
         self.current_taskID
@@ -75,12 +81,21 @@ class Worker:
             workermessage = WorkerMessage('127.0.0.1', task.get_ID(), self.port, True, None)
             workermessage.set_type(type.Task.TransferOrCheck)
             log.info('start to execute a task:'+task.to_string())
-            agent = workeragent.WorkerAgent(task)
+
             destination = task.get_destination()
             desClient = s3client.S3Client(destination['accessKey'],destination['secretKey'],destination['endpoint'])
             desClient.put_object(destination['bucketName'],task.get_keyForTaskPath()+'taskstatus', 
                                 'running' + '\n' + task.get_ID())
-            result = agent.execute()
+
+            storage = Storage(desClient, destination['bucketName'], task.get_synctaskID()+'/', 10, 50)
+
+            agent = workeragent.WorkerAgent(task, storage)
+            tmpListForStorage, result = agent.execute()
+
+            applyfor_storage_token(task.get_master_ip_port(), self.ip)
+            storage.put(tmpListForStorage)
+            release_storage_token(task.get_master_ip_port(), self.ip)
+
             desClient.put_object(destination['bucketName'],task.get_keyForTaskPath()+'taskstatus', 
                                 'done' + '\n' + task.get_ID())
             workermessage.set_result(result)
@@ -150,6 +165,7 @@ class Worker:
                 for filename in os.listdir(mydir):
                     if os.path.isfile(mydir+filename):
                         if fileNumbersCount >= Worker.DiskFileListFileNumbers:
+                            filelist.sort()
                             desClient.put_object(task.get_bucketName(), task.get_fileNamePrefix() + "filelist" + str(filelistNumber),'\n'.join(filelist))
                             log.info('filelist' + str(filelistNumber) + ' is created,saved in ' + task.get_fileNamePrefix() + "filelist" + str(filelistNumber))
                             fileNumbersCount = 0
@@ -169,6 +185,7 @@ class Worker:
                         jobSize += long(sizeOfBytes)
 
                 if fileNumbersCount != 0:
+                    filelist.sort()
                     desClient.put_object(task.get_bucketName(),task.get_fileNamePrefix()+"filelist"+str(filelistNumber), '\n'.join(filelist))
                     log.info('filelist'+str(filelistNumber)+' is created,saved in '+task.get_fileNamePrefix()+"filelist"+str(filelistNumber) )
                     fileNumbersCount = 0
@@ -210,7 +227,28 @@ def send_message_to_workermanager(workermessage):
             log.warning('send workermessage to WorkerManager failed, will retry')
             sleep(10)
 
-        
+def applyfor_storage_token(master_ip_port, worker_ip):
+    while True:
+        try:
+            s = xmlrpclib.ServerProxy('http://' + master_ip_port, allow_none = True)
+            if s.applyfor_storage_token(worker_ip + ':' + str(workerport)) is True:
+                return True
+        except Exception, e:
+            log.warning(e)
+
+        sleep(10)
+
+def release_storage_token(master_ip_port, worker_ip):
+    while True:
+        try:
+            s = xmlrpclib.ServerProxy('http://' + master_ip_port, allow_none = True)
+            if s.release_storage_token(worker_ip + ':' + str(workerport)) is True:
+                return True
+        except Exception, e:
+            log.warning(e)
+
+        sleep(10)
+
 def main(port):
     log.info('worker is starting, and listening on port:'+str(port))
     server = ThreadXMLRPCServer(("0.0.0.0", int(port)),allow_none=True,logRequests=False)  
@@ -227,13 +265,6 @@ def catch_main_except():
 
 if __name__ == '__main__':
     catch_main_except()
-    '''
-    queue = deque()
-    queue.append('a')
-    queue.append('s')
-    queue.append('x')
-    log.info(queue)
-    print 'ssss\n'+'\n'.join(queue)
-    '''
+
     
     

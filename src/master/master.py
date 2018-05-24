@@ -37,7 +37,6 @@ import time
 import logging
 log = logging.getLogger('root')
 
-
 """异步的server类"""
 class ThreadXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
     pass
@@ -59,13 +58,19 @@ class Master:
         self.taskPool = None
         self.__init()
         self.__doesHaveToken = False
+        self.__storageTokenLock = threading.Lock()
+        self.__whoGotStorageToken = ''
 
     def __init(self):
+        #check_workermanagers will use __workermanagerdict, so we need a lock
+        self.__bigGranularityLock.acquire()
         self.finishedFiles = 0
         self.finishedSize = 0
         self.failedFiles = 0
         self.FinishedTasks = 0
         self.roundStartTime = time.time()
+        __workermanagerdict = dict()
+        self.__bigGranularityLock.release()
 
     def set_token(self):
         self.__doesHaveToken = True
@@ -90,11 +95,15 @@ class Master:
                     self.__workermanagerdict.pop(ip)
                     break
                 else:
-                    if self.__workerSpeed[ip] != 0:
+                    if self.__workerSpeed[ip] != 0 and self.taskPool.does_all_tasks_dispatched() is True:
                         for task in workermanagerinfo.get_taskqueue():
                             if (time.time() - float(task.get_startTime())) >\
-                                (float(task.get_taskFileSize())/1024/self.__workerSpeed[ip] + task.get_taskFileNumbers()*Master.EachRequestAndResponseTime) * 3:
+                                (float(task.get_taskFileSize())/1024/self.__workerSpeed[ip] + task.get_taskFileNumbers()*Master.EachRequestAndResponseTime) * 5:
                                 self.taskPool.set_task_status(decodeID.taskID(task.get_ID()), status.TASK.done, status.TASK.dispatched)
+                                log.warning(task.get_ID() + ' is slow, we set it done')
+                                workermanagerinfo.get_taskqueue().remove(task)
+                                break
+
         except Exception, e:
             log.info(e)
         finally:
@@ -113,6 +122,7 @@ class Master:
                 task = self.__workermanagerdict[workerip].get_task(message.get_ID())
                 if not task:
                     log.info('we didn\'t have any record of '+str(message.get_ID())+' in '+str(workerip))
+                    return True
                 self.__workermanagerdict[workerip].rm_task(task)
                 if  message.get_type()== type.Task.TransferOrCheck:
                     self.__dealwith_TransferOrCheckTask_message(message, task)
@@ -124,6 +134,26 @@ class Master:
             return False
         finally:
             self.__bigGranularityLock.release()
+
+    def applyfor_storage_token(self, worker_ip_port):
+        if self.__storageTokenLock.acquire(False) is True:
+            self.__whoGotStorageToken = worker_ip_port
+            log.info(worker_ip_port + ' got storage token')
+            return True
+        else:
+            try:
+                s = xmlrpclib.ServerProxy('http://' + self.__whoGotStorageToken, allow_none=True)
+                s.get_status()
+            except Exception, e:
+                log.info(e)
+                log.info(self.__whoGotStorageToken + ' is shutdown, we will release the storage token')
+                self.__storageTokenLock.release()
+            return False
+
+    def release_storage_token(self, worker_ip_port):
+        log.info('release storage token from ' + worker_ip_port)
+        self.__storageTokenLock.release()
+        return True
 
     def __dealwith_TransferOrCheckTask_message(self, message, task):
         if message.get_isSuccess() == True:

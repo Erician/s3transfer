@@ -100,7 +100,6 @@ class WorkerManager:
         finally:
             WorkerManager.bigGranularityLock.release()
 
-    
     def send_message(self, messageAttr):
         try:
             WorkerManager.bigGranularityLock.acquire()
@@ -142,7 +141,7 @@ class WorkerManager:
 
 def start_workermanager():
     try:
-        server = ThreadXMLRPCServer(('0.0.0.0', port.ManagerPort.WorkerManager),allow_none=True,logRequests=False)
+        server = ThreadXMLRPCServer(('0.0.0.0', port.ManagerPort.WorkerManager), allow_none=True, logRequests=False)
         server.register_instance(WorkerManager())
         log.info('create workermanager successfully, its port is '+str(port.ManagerPort.WorkerManager))
         server.serve_forever()
@@ -162,6 +161,7 @@ def manager_thread():
                 s = xmlrpclib.ServerProxy('http://127.0.0.1:' + str(worker.get_port()))
                 worker.set_task(task)
                 worker.set_status(status.WORKER.busy)
+                s.set_ip(WorkerManager.ip)
                 s.do_task(task)
                 log.info('send task:' + task['ID'] + ' to worker:' + str(worker.get_port()))
         except Exception, e:

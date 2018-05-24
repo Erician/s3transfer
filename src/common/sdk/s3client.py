@@ -12,6 +12,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 from common.myexceptions import ossexception
 from common.utils import urltools
+import hashlib
 import boto3,botocore
 import basesdk
 import io
@@ -312,7 +313,7 @@ class S3Client(basesdk.BaseSDK):
             log.info(e)
             return None
 
-    def upload_fileobj(self,bucketName,keyName,streamBody):
+    def upload_fileobj(self, bucketName, keyName, streamBody):
         try:
             self.client.upload_fileobj(streamBody, bucketName, keyName)
             return [True,'']
@@ -321,19 +322,67 @@ class S3Client(basesdk.BaseSDK):
             log.info('put object failed!')
             return [None,e]
 
+    def upload_fileobj_by_multipart_upload(self, bucketName, keyName, streamBody):
+        try:
+            chunk = streamBody.read(S3Client.Multipart_Chunksize)
+            if len(chunk) < S3Client.Multipart_Chunksize:
+                return self.put_object_with_small_content(bucketName, keyName, chunk)
+            uploadID = None
+            multiPartUpload = self.client.create_multipart_upload(Bucket=bucketName, Key=keyName)
+            uploadID = multiPartUpload['UploadId']
+            partInfoDict = {'Parts': []}
+            partNumber = 1
+            myhash = hashlib.md5()
+
+            while chunk:
+                myhash.update(chunk)
+                part = self.client.upload_part(
+                    Bucket=bucketName,
+                    Key=keyName,
+                    PartNumber=partNumber,
+                    UploadId=multiPartUpload['UploadId'],
+                    Body=chunk if chunk else ""
+                )
+                # PartNumber and ETag are needed
+                partInfoDict['Parts'].append({
+                    'PartNumber': partNumber,
+                    # You can get this from the return of the uploaded part that we stored earlier
+                    'ETag': part['ETag']
+                })
+                chunk = streamBody.read(S3Client.Multipart_Chunksize)
+
+            # This what AWS needs to finish the multipart upload process
+            completed_ctx = {
+                'Bucket': bucketName,
+                'Key': keyName,
+                'UploadId': multiPartUpload['UploadId'],
+                'MultipartUpload': partInfoDict
+            }
+            self.client.complete_multipart_upload(**completed_ctx)
+            return [True, myhash.hexdigest().lower()]
+        except Exception, e:
+            log.info(e)
+            # 如果分片上传失败，清理残片，因为对一个bucket来说，最多有10000个分片上传任务
+            if uploadID:
+                self.abort_multipart_upload(bucketName, keyName, uploadID)
+            return [None, 'put object failed']
+
     def put_object_with_url(self, bucketName, keyName, url):
         try:
             size = urltools.get_info(url)
             if size == -1:
                 raise Exception
             elif size < S3Client.Multipart_Chunksize:
-                return self.put_object_with_small_content(bucketName, keyName, url)
+                return self.put_object_with_small_content(bucketName, keyName, urltools.download(url))
             uploadID = None
             multiPartUpload = self.client.create_multipart_upload(Bucket=bucketName, Key=keyName)
             uploadID = multiPartUpload['UploadId']
             partInfoDict = {'Parts': []}
+            myhash = hashlib.md5()
+
             for partNumber in range(1, size//S3Client.Multipart_Chunksize+2):
                 content = urltools.download_by_rang(url, (partNumber-1)*S3Client.Multipart_Chunksize, partNumber*S3Client.Multipart_Chunksize-1)
+                myhash.update(content)
                 part = self.client.upload_part(
                     Bucket=bucketName,
                     Key=keyName,
@@ -356,7 +405,7 @@ class S3Client(basesdk.BaseSDK):
                 'MultipartUpload': partInfoDict
             }
             self.client.complete_multipart_upload(**completed_ctx)
-            return [True, '']
+            return [True, myhash.hexdigest().lower()]
         except Exception, e:
             log.info(e)
             # 如果分片上传失败，清理残片，因为对一个bucket来说，最多有10000个分片上传任务
@@ -364,10 +413,15 @@ class S3Client(basesdk.BaseSDK):
                 self.abort_multipart_upload(bucketName, keyName, uploadID)
             return [None, 'put object failed']
 
-    def put_object_with_small_content(self, bucketName, keyName, url):
+    '''
+    :returns: if success, return true and md5
+    '''
+    def put_object_with_small_content(self, bucketName, keyName, content):
         try:
-            self.put_object(bucketName, keyName, urltools.download(url))
-            return [True, '']
+            myhash = hashlib.md5()
+            myhash.update(content)
+            self.put_object(bucketName, keyName, content)
+            return [True, myhash.hexdigest().lower()]
         except Exception, e:
             log.info(e)
             return [None, 'put object failed']
@@ -382,10 +436,27 @@ class S3Client(basesdk.BaseSDK):
         except Exception,e:
             log.info(e)
             raise ossexception.GetObjectFailed('get '+keyName+' failed!')
+
+def clean_with_prefix(client, bucketName, prefix):
+    try:
+        marker = ''
+        while True:
+            returnVal = client.list_objects_without_delimiter(bucketName, prefix, marker)
+            if not returnVal:
+                return False
+            [objects, isTruncated, marker] = returnVal
+            if not client.delete_objectlist(bucketName, objects):
+                return False
+            if not isTruncated:
+                break
+        return True
+    except Exception, e:
+        log.info(e)
+        return False
         
 if __name__ == '__main__':
-
-    pass
+    client = S3Client('0DFA5B10A1B8EE0107CAAACD465EA7D4', '2DDFAA55EFEE553114929380EBD6CF88', 'http://s3.cn-north-1.jcloudcs.com')
+    clean_with_prefix(client, 'src', '')
 
 
 

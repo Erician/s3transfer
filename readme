@@ -45,7 +45,7 @@ job-ID:指定该任务的名字，建议取一个有意义的名字，且不要�
 job-type:job的类型只有两种，transfer(迁移)、check(校验)
 
 src-filetype:指定源数据类型,可选的有：diskfile,urlfile,s3file,qiniufile,tencentfile，aliyunfile，baidufile
-提示：diskfile和urlfile不需要指定这些选项：src-accesskey、src-secretkey、src-endpoint、src-bucketName、src-prefix
+提示：diskfile和urlfile不需要指定这些选项：src-accesskey、src-secretkey、src-endpoint、src-bucketName
 src-accesskey:
 src-secretkey:
 src-endpoint:
@@ -66,6 +66,9 @@ sync-since:设定一个时间，只会迁移最后更改时间在该时间之后
 
 check-time = 可选的有(1)never:从不验证(2)now:迁移完成后立即验证, 默认为now
 check-mode:指定验证模式(默认为md5)，可选的有(1)head:仅查看云存储上是否有该文件，花费时间少(2)md5:使用md5进行验证，耗费时间多，大致相当于迁移的时间
+
+note:关于目录的问题,如果指定了src-prefix或src-absolutepath,迁移系统只会把该目录下的文件迁移过去,不会保留文件的前缀,如果您需要前缀,可以在des-prefix中添加
+对于urlfile有些例外,urlfile中的src-prefix用来去除特定的前缀,比如:http://example.com/a.txt,如果我们不想要http://,就可以将它配置成src-prefix的值
 
 5．命令
 

@@ -36,7 +36,7 @@ class WorkerAgent:
     failedSize = 0
     uploadSize = 0
     MaxThreadNum = 3
-    def __init__(self, task):
+    def __init__(self, task, storage):
         self.taskID = task.get_ID()
         self.sync = task.get_sync()
         self.source = task.get_source()
@@ -54,6 +54,8 @@ class WorkerAgent:
         self.fileNumbers = long(pair[0].strip())
         self.taskSize = long(pair[1].strip())
         self.initialClassVar()
+        self.tmpListForStorage = list()
+        self.storage = storage
 
     def initialClassVar(self):
         self.queue = Queue(WorkerAgent.FileQueueDefaultCapacity)
@@ -80,7 +82,7 @@ class WorkerAgent:
     def transfer(self):
         [srcClient, desClient] = self.create_clients()
         while True:
-            lineNum,line = self.get_from_queue()
+            lineNum, line = self.get_from_queue()
             line = line.strip('\n').strip()
             pair = line.split('\t')
             key = pair[0].strip()
@@ -95,7 +97,6 @@ class WorkerAgent:
                 srcPrefixRemovedSlash = self.source['prefix'][1:] if self.source['prefix'].startswith('/') else self.source['prefix']
                 desKey = self.destination['prefix'] + keyRemovedSlash.decode('utf8')[len(srcPrefixRemovedSlash.decode('utf-8')):].encode('utf-8')
                 if self.fileType == type.FileType.DiskFile:
-                    log.info(desKey)
                     [isUploadOk,recordErrorReason] = self.upload_diskfile(desClient, key, desKey)
                 elif self.fileType == type.FileType.UrlFile:
                     [isUploadOk,recordErrorReason] = self.upload_urlfile(desClient, key, desKey)
@@ -137,11 +138,9 @@ class WorkerAgent:
     def upload_diskfile(self,desClient, key, desKey):
         try:
             myfile = open(key,'r')
-            mybool,res = desClient.upload_fileobj( self.destination['bucketName'], desKey, myfile)
-            if not mybool:
-                return [False,res]
+            mybool,res = desClient.upload_fileobj_by_multipart_upload( self.destination['bucketName'], desKey, myfile)
             myfile.close()
-            return [True,None]
+            return [mybool, res]
         except IOError,e:
             log.error(e)
             return [False,e]
@@ -196,17 +195,21 @@ class WorkerAgent:
         return [True, '']
     
     def check_with_md5(self,srcClient, desClient, key, desKey):
-        if self.fileType == type.FileType.DiskFile:
-            srcMd5 = self.compute_diskfile_md5(key)
-        elif self.fileType == type.FileType.UrlFile:
-            srcMd5 = self.compute_urlfile_md5(key)
-        elif self.fileType == type.FileType.QiniuFile:
-            srcMd5 = self.compute_qiniufile_md5(srcClient,self.source['bucketName'],key)
-        elif (self.fileType == type.FileType.S3File 
-              or self.fileType == type.FileType.AliyunFile 
-              or self.fileType == type.FileType.TencentFile 
-              or self.fileType == type.FileType.BaiduFile):
-            srcMd5 = self.compute_s3file_md5(srcClient,self.source['bucketName'],key)
+        srcMd5 = self.storage.get(key)
+
+        if srcMd5 == "":
+            if self.fileType == type.FileType.DiskFile:
+                srcMd5 = self.compute_diskfile_md5(key)
+            elif self.fileType == type.FileType.UrlFile:
+                srcMd5 = self.compute_urlfile_md5(key)
+            elif self.fileType == type.FileType.QiniuFile:
+                srcMd5 = self.compute_qiniufile_md5(srcClient, self.source['bucketName'], key)
+            elif (self.fileType == type.FileType.S3File
+                  or self.fileType == type.FileType.AliyunFile
+                  or self.fileType == type.FileType.TencentFile
+                  or self.fileType == type.FileType.BaiduFile):
+                srcMd5 = self.compute_s3file_md5(srcClient, self.source['bucketName'], key)
+
         if not srcMd5:
             if self.fileType == type.FileType.DiskFile:
                 return [False,key+' doesn\'t exist in the source ']
@@ -279,6 +282,8 @@ class WorkerAgent:
             self.uploadSize = self.uploadSize+long(size)
             if self.jobType == type.JobType.Transfer:
                 log.info('uploaded ok:'+key + '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
+                #when isObjectOparationOk == True, errorReason is md5
+                self.tmpListForStorage.append(key + '\t' + errorReason)
             elif self.jobType == type.JobType.Check:
                 self.md5List.append(key+'\t'+errorReason)
                 log.info('check ok:'+key +'\t'+errorReason+ '\t'+ str(self.succeeded)+'/'+ str(self.fileNumbers))
@@ -324,9 +329,10 @@ class WorkerAgent:
         log.info('the cost time is '+ str(round(time.time()-startTime))+'s'+ ' and the average rate is '\
                   + str(round(float(self.uploadSize)/(time.time()-startTime)/1024,2))+'KB/s')
         #minus the time of request and response time, EachRequestAndResponseTime is not very accurate
-        return workermessage.TaskResult(self.fileNumbers,self.taskSize,self.succeeded,self.failed,
+        return [self.tmpListForStorage,workermessage.TaskResult(self.fileNumbers,self.taskSize,self.succeeded,self.failed,
                                 self.uploadSize,round(time.time()-startTime),
                                 round(float(self.uploadSize)/(time.time()-startTime-self.fileNumbers*WorkerAgent.EachRequestAndResponseTime)/1024,2))
+                ]
         
     def generate_threads(self):
         subThreads = list()

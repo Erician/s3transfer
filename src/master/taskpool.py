@@ -98,6 +98,9 @@ class TaskPool:
         except Exception, e:
             log.info(e)
             return None
+
+    def does_all_tasks_dispatched(self):
+        return self.tasklistStartPosToFind >= len(self.tasklist)
     
     def is_all_tasks_finished(self):
         try:

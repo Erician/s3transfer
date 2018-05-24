@@ -449,7 +449,7 @@ def edit_jobcfg(jobIDNeededEdit):
     print 'edit ' + jobIDNeededEdit + ' failed, it doesn\'t exist'
 
 def show_status(option = None):
-    if not option or option.startswith('--job'):
+    if not option or (option.startswith('--job') and not option.startswith('--jobID')):
         show_all_job_status()
     elif option.startswith('--jobID='):
         show_job_status(option[option.find('--jobID=')+len('--jobID='):])
